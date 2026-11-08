@@ -1,0 +1,23 @@
+---
+import SiteHeader from './SiteHeader.astro';
+import Introduction from './Introduction.astro';
+import SelectedWork from './SelectedWork.astro';
+import AreasOfExploration from './AreasOfExploration.astro';
+import SiteFooter from './SiteFooter.astro';
+import JournalPurpose from './JournalPurpose.astro';
+import type { Project } from '../data/projects';
+interface Props { projects: readonly Project[]; order?: 'a' | 'b'; enhance?: boolean }
+const { projects, order = 'a', enhance = true } = Astro.props;
+const hasWork = projects.length > 0;
+---
+<div class="page-shell">
+  <SiteHeader enhance={enhance} hasWork={hasWork} />
+  <main id="main" tabindex="-1">
+    <Introduction hasWork={hasWork} />
+    {order === 'a' && <AreasOfExploration />}
+    {hasWork && <SelectedWork projects={projects} />}
+    {order === 'b' && <AreasOfExploration />}
+    <JournalPurpose />
+  </main>
+  <SiteFooter />
+</div>

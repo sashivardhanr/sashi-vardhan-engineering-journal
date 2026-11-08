@@ -1,0 +1,11 @@
+---
+interface Props { topId?: string }
+const { topId = 'intro' } = Astro.props;
+---
+<footer class="site-footer"><p>Sashi Vardhan<span>An evolving engineering journal.</span></p><a href={`#${topId}`}>Back to top <span aria-hidden="true">↑</span></a></footer>
+<style>
+  .site-footer { margin-top:var(--space-8); border-top:1px solid var(--text); padding-block:var(--space-6); display:flex; align-items:flex-start; justify-content:space-between; gap:var(--space-5); font-size:var(--text-meta); }
+  p>span { display:block; color:var(--muted); margin-top:var(--space-1); }
+  a { min-height:var(--target); display:flex; align-items:center; gap:var(--space-2); flex-shrink:0; }
+  @media(max-width:22rem) { .site-footer { flex-direction:column; gap:var(--space-2); } }
+</style>

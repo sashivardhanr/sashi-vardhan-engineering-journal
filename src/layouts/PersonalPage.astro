@@ -1,0 +1,15 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/personal-pages.css';
+interface Props { title: string; description: string; noindex?: boolean }
+const { title, description, noindex = false } = Astro.props;
+---
+<BaseLayout title={`${title} — Sashi Vardhan`} description={description} review={noindex}>
+  <div class="page-shell">
+    <SiteHeader />
+    <main id="main" tabindex="-1" class="personal-page"><slot /></main>
+    <SiteFooter topId="page-title" />
+  </div>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import PersonalPage from '../layouts/PersonalPage.astro';
+import { profile } from '../data/profile';
+import { aboutSections, relatedWork, publishedDestinations } from '../data/personal';
+const work = publishedDestinations(relatedWork);
+---
+<PersonalPage title="About" description="Sashi Vardhan’s academic context, engineering interests and intentions for a personal engineering journal.">
+  <header class="page-heading"><p class="eyebrow">Personal context</p><h1 id="page-title" tabindex="-1">About Sashi.</h1><p class="page-intro">{profile.introduction}</p></header>
+  <div class="biography">
+    <aside aria-label="At a glance"><p class="eyebrow">At a glance</p><dl><dt>Academic context</dt><dd>Second-year ECE student</dd><dt>Interests</dt><dd>Software, hardware and the systems between them</dd><dt>This site</dt><dd>A personal engineering journal</dd></dl></aside>
+    <div class="biography-copy">
+      {aboutSections.map(section => <section class="reading-section"><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}
+      {work.length > 0 && <section class="reading-section"><h2>Work and writing</h2><ul>{work.map(link => <li><a href={link.href}>{link.label}</a></li>)}</ul></section>}
+      <section class="reading-section"><h2>A journal that can grow.</h2><p>I’m keeping this space open to the direction my interests take. The aim is a useful record of that development, with enough context for someone else to understand the work.</p><div class="text-links"><a href="/now/">Current-focus update →</a><a href="/contact/">Contact and profiles →</a></div></section>
+    </div>
+  </div>
+</PersonalPage>
+<style>
+  .biography { display:grid; grid-template-columns:15rem minmax(0,43rem); gap:var(--space-9); justify-content:space-between; }
+  aside { padding-top:var(--space-7); border-top:1px solid var(--line); }
+  dt { font-size:var(--text-meta); color:var(--muted); }
+  dd { margin:var(--space-2) 0 var(--space-6); font-size:1rem; }
+  @media(max-width:47.999rem) { .biography { grid-template-columns:1fr; gap:var(--space-5); } }
+</style>

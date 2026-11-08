@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../../src/layouts/BaseLayout.astro';
+import HomePage from '../../../src/components/HomePage.astro';
+import { reviewProjects } from '../../fixtures/projects';
+export function getStaticPaths() {
+  return ['order-a', 'order-b', 'no-script', 'font-fallback'].map(variant => ({ params:{ variant } }));
+}
+const variant = Astro.params.variant;
+const order = variant === 'order-a' ? 'a' : 'b';
+const enhance = variant !== 'no-script';
+const fallback = variant === 'font-fallback';
+---
+<BaseLayout title={`Review only — ${variant} — Sashi Vardhan`} review enhance={enhance} fallback={fallback}>
+  <aside class="review-banner" aria-label="Review fixture notice">
+    <p><strong>REVIEW ONLY</strong> — {variant}. These labelled fixtures are not portfolio content.</p>
+    <nav aria-label="Review variants"><a href="/order-a/">Order A</a><a href="/order-b/">Order B</a><a href="/no-script/">No scripts</a><a href="/font-fallback/">Font fallback</a></nav>
+  </aside>
+  <HomePage projects={reviewProjects} order={order} enhance={enhance} />
+</BaseLayout>
+<style>
+  .review-banner { background:var(--inset); border-bottom:2px solid var(--notice); padding:1rem max(var(--gutter), calc((100% - var(--content-width))/2)); font-size:1rem; }
+  .review-banner p { max-width:none; }
+  .review-banner strong { color:var(--notice); }
+  .review-banner nav { display:flex; gap:.5rem 1.5rem; flex-wrap:wrap; }
+  .review-banner a { display:flex; align-items:center; min-height:2.75rem; }
+</style>

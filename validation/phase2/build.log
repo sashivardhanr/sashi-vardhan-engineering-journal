@@ -1,0 +1,20 @@
+npm notice run sashi-vardhan-engineering-journal@0.1.0 build
+npm notice run astro build
+05:41:10 [types] Generated 13ms
+05:41:10 [build] output: "static"
+05:41:10 [build] mode: "static"
+05:41:10 [build] directory: /Users/sashivardhan/Downloads/Sashi_Vardhan_Personal_Engineering_Platform_Spec_v1/dist/
+05:41:10 [build] Collecting build info...
+05:41:10 [build] ✓ Completed in 26ms.
+05:41:10 [build] Building static entrypoints...
+05:41:10 [vite] ✓ built in 60ms
+05:41:10 [vite] ✓ built in 7ms
+05:41:10 [build] Rearranging server assets...
+
+ generating static routes 
+05:41:10   ├─ /index.html (+5ms) 
+05:41:10 ✓ Completed in 9ms.
+
+05:41:10 [build] ✓ Completed in 90ms.
+05:41:10 [build] 1 page(s) built in 117ms
+05:41:10 [build] Complete!

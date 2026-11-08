@@ -1,0 +1,16 @@
+{
+  "light": {
+    "text": 13.88,
+    "muted": 5.73,
+    "accent": 6.06,
+    "fixture": 6.98,
+    "control": 3.93
+  },
+  "dark": {
+    "text": 15.05,
+    "muted": 8.3,
+    "accent": 9.66,
+    "fixture": 8.84,
+    "control": 6.05
+  }
+}

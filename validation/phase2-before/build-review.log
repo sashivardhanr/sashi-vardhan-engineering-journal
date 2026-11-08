@@ -1,0 +1,23 @@
+npm notice run sashi-vardhan-engineering-journal@0.1.0 build:review
+npm notice run astro build --config astro.review.config.mjs
+05:41:11 [types] Generated 15ms
+05:41:11 [build] output: "static"
+05:41:11 [build] mode: "static"
+05:41:11 [build] directory: /Users/sashivardhan/Downloads/Sashi_Vardhan_Personal_Engineering_Platform_Spec_v1/.review-dist/
+05:41:11 [build] Collecting build info...
+05:41:11 [build] ✓ Completed in 27ms.
+05:41:11 [build] Building static entrypoints...
+05:41:11 [vite] ✓ built in 46ms
+05:41:11 [vite] ✓ built in 7ms
+05:41:11 [build] Rearranging server assets...
+
+ generating static routes 
+05:41:11   ├─ /order-a/index.html (+5ms) 
+05:41:11   ├─ /order-b/index.html (+1ms) 
+05:41:11   ├─ /no-script/index.html (+1ms) 
+05:41:11   ├─ /font-fallback/index.html (+1ms) 
+05:41:11 ✓ Completed in 12ms.
+
+05:41:11 [build] ✓ Completed in 78ms.
+05:41:11 [build] 4 page(s) built in 106ms
+05:41:11 [build] Complete!

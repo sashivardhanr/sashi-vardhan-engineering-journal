@@ -1,0 +1,26 @@
+@font-face {
+  font-family:'Source Serif 4'; font-style:normal; font-weight:400; font-display:swap;
+  src:url('/fonts/source-serif-4-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:auto; }
+body { margin:0; background:var(--bg); color:var(--text); font:1.0625rem/1.65 var(--font-body); }
+h1,h2,h3,p,figure,dl { margin:0; }
+h1,h2,h3 { font-family:var(--font-editorial); font-weight:400; line-height:1.2; font-optical-sizing:auto; }
+p { max-width:65ch; }
+a { color:inherit; text-underline-offset:.25em; text-decoration-thickness:1px; transition:color var(--transition-fast); }
+a:hover { color:var(--accent); }
+a:focus-visible,summary:focus-visible,select:focus-visible,pre:focus-visible,[tabindex='-1']:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+[hidden] { display:none!important; }
+.page-shell { max-width:calc(var(--content-width) + 2 * var(--gutter)); padding-inline:var(--gutter); margin-inline:auto; }
+.eyebrow { font:var(--text-meta)/1.5 var(--font-mono); color:var(--accent); letter-spacing:.04em; margin-bottom:var(--space-5); }
+.action { display:inline-flex; align-items:center; justify-content:space-between; gap:var(--space-6); min-height:var(--target); padding:var(--space-3) var(--space-4); background:var(--text); color:var(--bg); text-decoration:none; font-size:1rem; }
+.action:hover { background:var(--accent); color:var(--bg); }
+.skip-link { position:absolute; top:var(--space-3); left:var(--space-3); transform:translateY(-200%); padding:var(--space-3); background:var(--text); color:var(--bg); z-index:10; }
+.skip-link:focus { transform:none; }
+/* Review-only fallback class; useful to inspect font failure without changing content. */
+.font-fallback { --font-editorial:Georgia, 'Times New Roman', serif; }
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
+}

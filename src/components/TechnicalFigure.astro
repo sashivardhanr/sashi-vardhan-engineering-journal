@@ -1,0 +1,22 @@
+---
+import type { TechnicalFigureData } from '../data/projects';
+interface Props { figure: TechnicalFigureData }
+const { figure } = Astro.props;
+---
+<figure class="technical-figure">
+  <a href={figure.src} aria-label={`Enlarge figure: ${figure.caption}`}>
+    <img src={figure.src} width={figure.width} height={figure.height} alt={figure.alt} loading="lazy" decoding="async" />
+  </a>
+  <figcaption>{figure.caption}{figure.source && <span class="source">Source: {figure.source}</span>}</figcaption>
+  <a class="figure-link" href={figure.src}>Enlarge figure <span aria-hidden="true">↗</span></a>
+  <details><summary>Read figure text</summary><pre tabindex="0" aria-label="Figure text equivalent">{figure.transcript}</pre></details>
+</figure>
+<style>
+  .technical-figure { min-width:0; }
+  img { display:block; width:100%; height:auto; border:1px solid var(--line); }
+  figcaption { margin-top:var(--space-3); font-size:var(--text-meta); color:var(--muted); line-height:1.65; }
+  .source { display:block; margin-top:var(--space-2); }
+  .figure-link, summary { min-height:var(--target); display:flex; align-items:center; font-size:var(--text-meta); gap:var(--space-2); width:fit-content; }
+  summary { cursor:pointer; display:list-item; padding-block:var(--space-3); }
+  pre { overflow:auto; max-width:100%; padding:var(--space-4); background:var(--inset); font:var(--text-meta)/1.7 var(--font-mono); }
+</style>

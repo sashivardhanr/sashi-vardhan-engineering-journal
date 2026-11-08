@@ -1,0 +1,62 @@
+[
+  {
+    "page": "/a1.html",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "/a2.html",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "/a1-sparse.html",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "/a2-sparse.html",
+    "scrollWidth": 320,
+    "width": 320
+  },
+  {
+    "page": "/a1.html",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "/a2.html",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "/a1-sparse.html",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "/a2-sparse.html",
+    "scrollWidth": 768,
+    "width": 768
+  },
+  {
+    "page": "/a1.html",
+    "scrollWidth": 1024,
+    "width": 1024
+  },
+  {
+    "page": "/a2.html",
+    "scrollWidth": 1024,
+    "width": 1024
+  },
+  {
+    "page": "/a1-sparse.html",
+    "scrollWidth": 1024,
+    "width": 1024
+  },
+  {
+    "page": "/a2-sparse.html",
+    "scrollWidth": 1024,
+    "width": 1024
+  }
+]

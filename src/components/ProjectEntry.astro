@@ -1,0 +1,38 @@
+---
+import EvidenceRecord from './EvidenceRecord.astro';
+import TechnicalFigure from './TechnicalFigure.astro';
+import type { Project, EvidenceItem } from '../data/projects';
+interface Props { project: Project }
+const { project } = Astro.props;
+const records: EvidenceItem[] = [
+  { label: 'Role', value: project.role },
+  { label: 'Validation', value: project.validation },
+  ...(project.evidence ?? []),
+  { label: 'Limitations', value: project.limitations },
+];
+const updated = project.updatedAt ? new Intl.DateTimeFormat('en-GB', { day:'numeric', month:'short', year:'numeric', timeZone:'UTC' }).format(new Date(project.updatedAt)) : undefined;
+---
+<article class:list={['project-entry', { 'with-figure': !!project.figure }]} aria-labelledby={`${project.id}-title`}>
+  <div class="project-copy">
+    {project.fixtureNotice && <p class="fixture-notice">{project.fixtureNotice}</p>}
+    {(project.domain || project.status || updated) && <p class="project-meta">
+      {project.domain && <span>{project.domain}</span>}
+      {project.status && <span>{project.status}</span>}
+      {updated && <time datetime={project.updatedAt}>Updated {updated}</time>}
+    </p>}
+    <h3 id={`${project.id}-title`}>{project.title}</h3>
+    <p class="project-summary">{project.summary}</p>
+    <EvidenceRecord items={records} />
+  </div>
+  {project.figure && <TechnicalFigure figure={project.figure} />}
+</article>
+<style>
+  .project-entry { padding-block:var(--space-7); border-top:1px solid var(--line); }
+  .with-figure { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:var(--space-8); }
+  .project-copy { max-width:46rem; min-width:0; }
+  h3 { font-size:clamp(1.625rem, 1.3rem + 1.1vw, 2.125rem); line-height:1.2; letter-spacing:-.015em; overflow-wrap:anywhere; text-wrap:pretty; }
+  .project-summary { font-size:1.0625rem; margin-top:var(--space-4); color:var(--muted); }
+  .project-meta { display:flex; flex-wrap:wrap; gap:var(--space-2) var(--space-4); font-size:var(--text-meta); color:var(--muted); margin-bottom:var(--space-3); }
+  .fixture-notice { font-size:var(--text-meta); color:var(--notice); margin-bottom:var(--space-4); }
+  @media(max-width:55rem) { .with-figure { display:block; } .with-figure :global(figure) { margin-top:var(--space-6); } }
+</style>

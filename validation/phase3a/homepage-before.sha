@@ -1,0 +1,5 @@
+76f71a5438c23699ef2d0393c2032d2e3b9cded3  src/styles/tokens.css
+8b646e15a00741fe938939b08f65c99a9d0ad2b9  src/styles/global.css
+35362d9cba36f2a85feb6af0204a2626a9116b10  src/components/Introduction.astro
+30e859bddfa3f3bfa66d37cc27bde6194e395b23  src/components/AreasOfExploration.astro
+d46de37b729c262410fbdcb0b6499e27acd9c85e  src/components/JournalPurpose.astro

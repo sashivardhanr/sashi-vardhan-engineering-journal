@@ -1,0 +1,16 @@
+<section class="journal-purpose" aria-labelledby="journal">
+  <div><p class="eyebrow">The journal</p><h2 id="journal" tabindex="-1">Room for the question.<br />Space for the evidence.</h2></div>
+  <div class="journal-copy">
+    <p>This is a home for a developing engineering practice: a place to connect questions, project notes and technical evidence.</p>
+    <p>The aim is to make the reasoning visible—what a project asks, how it is approached, and what its evidence can and cannot show.</p>
+    <p class="editorial-note">An evolving record, with room for unfinished questions.</p>
+  </div>
+</section>
+<style>
+  .journal-purpose { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-9); padding-block:var(--space-9); }
+  h2 { font-size:clamp(1.875rem, 1.4rem + 1.4vw, 2.625rem); line-height:1.2; letter-spacing:-.015em; }
+  .journal-copy { max-width:49ch; }
+  .journal-copy p+p { margin-top:var(--space-5); }
+  .journal-copy .editorial-note { color:var(--muted); font-size:var(--text-meta); border-left:2px solid var(--accent); padding-left:var(--space-4); margin-top:var(--space-6); }
+  @media(max-width:47.999rem) { .journal-purpose { grid-template-columns:1fr; gap:var(--space-6); padding-block:var(--space-8); } }
+</style>

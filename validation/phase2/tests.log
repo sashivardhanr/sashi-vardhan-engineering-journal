@@ -1,0 +1,25 @@
+npm notice run sashi-vardhan-engineering-journal@0.1.0 test
+npm notice run node --test tests/*.test.mjs
+✔ production emits only the homepage and excludes all fixture records/assets (1.153333ms)
+✔ production has one H1 and valid local fragment destinations (0.127375ms)
+✔ local assets referenced by production exist and stay local (0.159542ms)
+✔ the review build renders both content orders without changing production (0.148208ms)
+✔ text-only and missing-metadata records have no empty image or date placeholders (0.124041ms)
+✔ script-free review has no scripts but includes native navigation and figure text (0.101375ms)
+✔ light: text/accent/notice contrast at least 4.5:1; control boundary at least 3:1 (0.341084ms)
+✔ dark: text/accent/notice contrast at least 4.5:1; control boundary at least 3:1 (0.059583ms)
+✔ early theme applies a saved light override before rendering (1.017292ms)
+✔ early theme applies a saved dark override before rendering (0.265834ms)
+✔ theme leaves CSS system preference in control for null (0.448292ms)
+✔ theme leaves CSS system preference in control for system (0.224417ms)
+✔ theme leaves CSS system preference in control for unexpected (0.202958ms)
+✔ theme leaves CSS system preference in control for <script> (0.185208ms)
+✔ blocked preference storage never prevents the document rendering (0.246417ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38.499542

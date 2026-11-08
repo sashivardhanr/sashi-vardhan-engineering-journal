@@ -1,0 +1,25 @@
+---
+import PersonalPage from '../layouts/PersonalPage.astro';
+import { nowRecord, publishedFocus, formatDate } from '../data/personal';
+const update = publishedFocus(nowRecord);
+const date = update ? update.reviewedAt : nowRecord.status === 'draft' ? nowRecord.preparedAt : nowRecord.reviewedAt;
+---
+<PersonalPage title="Now" description={update ? 'A reviewed, dated snapshot of Sashi Vardhan’s current focus.' : 'Current-focus page awaiting a reviewed update. General interests are not presented as active work.'} noindex={!update}>
+  <header class="page-heading"><p class="eyebrow">A dated snapshot</p><h1 id="page-title" tabindex="-1">Now.</h1><p class="page-intro">A place for current attention, separate from longer-term interests.</p></header>
+  <div class="now-record">
+    <aside class="record-date"><p class="meta">{update ? 'Last reviewed' : 'Page prepared'}</p><time datetime={date}>{formatDate(date)}</time><p class="meta">{update ? 'Owner-reviewed update' : 'Draft · awaiting owner review'}</p></aside>
+    <div>
+      {update ? update.sections.map(section => <section class="reading-section"><h2>{section.heading}</h2><p>{section.body}</p></section>) : <>
+        <section class="status-note" aria-labelledby="update-state"><h2 id="update-state">Awaiting a reviewed update.</h2><p>No current-focus record has been approved for this page yet.</p><p class="meta">The date is when this page was prepared. It is not an activity update.</p></section>
+        <section class="reading-section context"><h2>Interests are not an activity log.</h2><p>Embedded systems, software, digital hardware, AI, robotics and open source remain the broad areas described on this site. They do not establish what is actively being built or contributed to today.</p><div class="text-links"><a href="/about/">Read the personal context →</a><a href="/#interests">Explore the interest areas →</a></div></section>
+      </>}
+    </div>
+  </div>
+</PersonalPage>
+<style>
+  .now-record { display:grid; grid-template-columns:15rem minmax(0,43rem); gap:var(--space-9); border-top:1px solid var(--line); padding-top:var(--space-8); justify-content:space-between; }
+  time { display:block; font:1.5rem/1.4 var(--font-editorial); margin-block:var(--space-3); }
+  .context { margin-top:var(--space-8); }
+  .status-note h2 { margin-bottom:var(--space-4); }
+  @media(max-width:47.999rem) { .now-record { grid-template-columns:1fr; gap:var(--space-7); } }
+</style>

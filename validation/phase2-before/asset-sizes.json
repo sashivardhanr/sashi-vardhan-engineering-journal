@@ -1,0 +1,22 @@
+[
+  {
+    "file": "dist/index.html",
+    "bytes": 6070,
+    "gzip_bytes": 2120
+  },
+  {
+    "file": "dist/_astro/index.CaabXHWY.css",
+    "bytes": 10998,
+    "gzip_bytes": 2747
+  },
+  {
+    "file": "dist/fonts/source-serif-4-latin.woff2",
+    "bytes": 48704,
+    "gzip_bytes": 48737
+  },
+  {
+    "file": "dist/fonts/OFL.txt",
+    "bytes": 4400,
+    "gzip_bytes": 1961
+  }
+]

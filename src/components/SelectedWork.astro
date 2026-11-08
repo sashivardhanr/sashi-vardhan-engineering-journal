@@ -1,0 +1,19 @@
+---
+import ProjectEntry from './ProjectEntry.astro';
+import type { Project } from '../data/projects';
+interface Props { projects: readonly Project[] }
+const { projects } = Astro.props;
+---
+<section class="selected-work" aria-labelledby="work">
+  <div class="section-heading"><h2 id="work" tabindex="-1">Selected work</h2><p>Questions, methods and evidence.</p></div>
+  {projects.length ? projects.map(project => <ProjectEntry project={project} />) :
+    <p class="empty-work">Case studies will appear here when there is reviewed work and evidence to share.</p>}
+</section>
+<style>
+  .selected-work { padding-block:var(--space-7); }
+  .section-heading { display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-5); padding-bottom:var(--space-6); }
+  h2 { font-size:clamp(1.75rem, 1.4rem + 1vw, 2.25rem); }
+  .section-heading p { color:var(--muted); font-size:var(--text-meta); }
+  .empty-work { color:var(--muted); max-width:55ch; padding-bottom:var(--space-5); }
+  @media(max-width:47.999rem) { .section-heading { display:block; } .section-heading p { margin-top:var(--space-3); } }
+</style>

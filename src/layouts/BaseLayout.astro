@@ -1,0 +1,25 @@
+---
+import '../styles/tokens.css';
+import '../styles/global.css';
+import themeInit from '../scripts/theme-init.js?raw';
+interface Props { title?: string; description?: string; review?: boolean; enhance?: boolean; fallback?: boolean; }
+const { title = 'Sashi Vardhan — Engineering & exploration', description = 'Sashi Vardhan’s personal engineering journal. A second-year ECE student exploring software, hardware and open-source engineering.', review = false, enhance = true, fallback = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class:list={{ 'font-fallback': fallback }}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content={description} />
+    {review && <meta name="robots" content="noindex,nofollow" />}
+    <title>{title}</title>
+    <link rel="icon" href="data:," />
+    {!fallback && <link rel="preload" href="/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin />}
+    {enhance && <script is:inline set:html={themeInit} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <slot />
+  </body>
+</html>

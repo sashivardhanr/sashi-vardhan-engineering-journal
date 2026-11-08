@@ -1,0 +1,14 @@
+.personal-page { padding-top:var(--space-9); }
+.personal-page h1 { font-size:clamp(2.5rem, 2rem + 2vw, 3.75rem); letter-spacing:-.025em; }
+.personal-page h2 { font-size:clamp(1.5rem, 1.25rem + .8vw, 2rem); letter-spacing:-.015em; }
+.page-intro { max-width:54ch; font-size:1.125rem; margin-top:var(--space-5); }
+.personal-page .page-heading { padding-bottom:var(--space-8); }
+.personal-page .reading-section { padding-block:var(--space-7); border-top:1px solid var(--line); }
+.reading-section p { margin-top:var(--space-4); }
+.personal-page .meta { color:var(--muted); font-size:var(--text-meta); }
+.personal-page .status-note { border-left:2px solid var(--accent); padding-left:var(--space-5); }
+.status-note p+p { margin-top:var(--space-3); }
+.personal-page a { overflow-wrap:anywhere; }
+.personal-page .text-links { display:flex; flex-wrap:wrap; gap:var(--space-4) var(--space-6); margin-top:var(--space-6); }
+.text-links a { display:inline-flex; align-items:center; min-height:var(--target); }
+@media(max-width:47.999rem) { .personal-page { padding-top:var(--space-8); } }
